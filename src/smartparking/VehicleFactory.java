@@ -8,6 +8,25 @@ package smartparking;
  *
  * @author Titan
  */
+
+// Using Factory Method Pattern
 public class VehicleFactory {
-    
+
+    public static Vehicle createVehicle(String type, String plateNumber) {
+
+        switch (type.toLowerCase()) {
+
+            case "car":
+                return new Car(plateNumber);
+
+            case "bike":
+                return new Bike(plateNumber);
+
+            case "truck":
+                return new Truck(plateNumber);
+
+            default:
+                throw new IllegalArgumentException("Invalid vehicle type");
+        }
+    }
 }

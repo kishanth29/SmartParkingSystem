@@ -8,6 +8,15 @@ package smartparking;
  *
  * @author Titan
  */
-public class car {
-    
+
+public class Car extends Vehicle {
+
+    public Car(String plateNumber) {
+        super(plateNumber);
+    }
+
+    @Override
+    public double calculateFee(int hours) {
+        return hours * 50;
+    }
 }
